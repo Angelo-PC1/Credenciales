@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Credencial JNE</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+      background: #f5f5f5;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Consultar Credencial</h2>
+  <p>Ingrese su DNI</p>
+
+  <input type="text" id="dni" maxlength="8" placeholder="12345678">
+  <button onclick="buscar()">Ingresar</button>
+
+  <script>
+    function buscar() {
+      let dni = document.getElementById("dni").value;
+
+      if (dni.length !== 8 || isNaN(dni)) {
+        alert("Ingrese un DNI válido de 8 dígitos");
+        return;
+      }
+
+      let url = "https://sites.jne.gob.pe/logindnfpe/images/20260413_" + dni + ".pdf";
+
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
