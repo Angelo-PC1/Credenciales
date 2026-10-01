@@ -74,20 +74,21 @@
     <button onclick="buscar()">Ingresar</button>
   </div>
 
-  <script>
+    <script>
     function buscar() {
-      let dni = document.getElementById("dni").value;
+      let dni = document.getElementById("dni").value.trim();
 
       if (dni.length !== 8 || isNaN(dni)) {
         alert("Ingrese un DNI válido de 8 dígitos");
         return;
       }
 
-      let url = "https://sites.jne.gob.pe/logindnfpe/images/20261005_" + dni + "[R].pdf";
+      let url = "https://sites.jne.gob.pe/logindnfpe/images/20261005_" + dni + ".pdf";
 
       window.open(url, "_blank");
     }
   </script>
+
 
 </body>
 </html>
